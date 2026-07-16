@@ -3,7 +3,6 @@ require('dotenv').config({ path: require('path').join(__dirname, '.env') });
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 
 const bookRoutes = require('./routes/stuff');
 const userRoutes = require('./routes/user');
@@ -25,7 +24,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(bodyParser.json());
 // Routes de l'API
 app.use('/api/books', bookRoutes);
 app.use('/api/auth', userRoutes);
