@@ -11,7 +11,7 @@ const userRoutes = require('./routes/user');
 const path = require('path');
 
 // Connexion à la base de données MongoDB Atlas
-mongoose.connect('mongodb+srv://sacha:204910@cluster0.stndrnd.mongodb.net/')
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
